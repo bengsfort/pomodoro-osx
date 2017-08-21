@@ -36,6 +36,7 @@
                 <customObject id="3FU-zB-z30" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="Pomodoro" customModuleProvider="target">
                     <connections>
                         <outlet property="statusMenu" destination="7ZF-qs-UBm" id="bbx-Xb-dND"/>
+                        <outlet property="toggleMenuItem" destination="inJ-Yb-tve" id="UtO-Xt-BIR"/>
                     </connections>
                 </customObject>
                 <menu id="7ZF-qs-UBm">
@@ -43,13 +44,7 @@
                         <menuItem title="Start" id="inJ-Yb-tve">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="startClickedWithSender:" target="3FU-zB-z30" id="PEv-tc-ZTk"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Cancel" id="oyA-KM-Hy2">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="cancelClickedWithSender:" target="3FU-zB-z30" id="1Ww-Y7-PpM"/>
+                                <action selector="toggleClickedWithSender:" target="3FU-zB-z30" id="KlV-Dp-bfh"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" id="0aX-6g-ebl" userLabel="Quit">

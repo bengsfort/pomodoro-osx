@@ -14,6 +14,7 @@
 		6C905D0F1F4AFA6C0027D917 /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C905D0E1F4AFA6C0027D917 /* PomodoroUITests.swift */; };
 		6C905D2C1F4B0F6A0027D917 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C905D2B1F4B0F6A0027D917 /* StatusMenuController.swift */; };
 		6C905D2F1F4B14450027D917 /* PomodoroTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */; };
+		6CDF20CF1F4B4CE500A7C1F1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6C905D101F4AFA6C0027D917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C905D2B1F4B0F6A0027D917 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusMenuController.swift; path = lib/StatusMenuController.swift; sourceTree = "<group>"; };
 		6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PomodoroTimer.swift; path = lib/PomodoroTimer.swift; sourceTree = "<group>"; };
+		6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = lib/Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				6C905D2B1F4B0F6A0027D917 /* StatusMenuController.swift */,
 				6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */,
+				6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				6C905D2F1F4B14450027D917 /* PomodoroTimer.swift in Sources */,
 				6C905D2C1F4B0F6A0027D917 /* StatusMenuController.swift in Sources */,
 				6C905CF21F4AFA6C0027D917 /* AppDelegate.swift in Sources */,
+				6CDF20CF1F4B4CE500A7C1F1 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +523,7 @@
 				6C905D151F4AFA6C0027D917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C905D161F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "PomodoroTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +532,7 @@
 				6C905D181F4AFA6C0027D917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C905D191F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "PomodoroUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +541,7 @@
 				6C905D1B1F4AFA6C0027D917 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
