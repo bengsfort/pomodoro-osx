@@ -15,11 +15,19 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     /** The menu item that toggles the timer. */
     @IBOutlet weak var toggleMenuItem: NSMenuItem!
     
+    /** The menu item the timer will be displayed in */
+    @IBOutlet weak var timerMenuItem: NSMenuItem!
+    
+    /** The timer view */
+    @IBOutlet weak var timerView: PomodoroTimerView!
+    
     /** The actual status bar item. */
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
     /** The Pomodoro timer instance. */
     let pomodoro: PomodoroTimer = PomodoroTimer()
+    
+    var loopTimer: Timer?
     
     /** Initialization. */
     override func awakeFromNib() {
@@ -27,6 +35,10 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
         icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        // Set the timer view
+        timerMenuItem.view = timerView
+        timerView.updateInactiveTimer()
         
         // Add self as a delegate for notification events
         NSUserNotificationCenter.default.delegate = self
@@ -90,8 +102,12 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     func updateLabels() {
         if !pomodoro.active {
             toggleMenuItem.title = "Start"
+            timerView.updateInactiveTimer()
         } else {
             toggleMenuItem.title = "Cancel"
+            if pomodoro.state != nil {
+                timerView.updateWithTimer(state: pomodoro.state!)
+            }
         }
     }
 }

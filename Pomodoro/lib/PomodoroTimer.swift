@@ -49,6 +49,9 @@ class PomodoroTimer {
     /** Is the timer active? */
     var active: Bool = false
     
+    /** The view for this timer. */
+    var view: PomodoroTimerView?
+    
     /** The current state of the Pomodoro timer. */
     var state: PomodoroState?
     
@@ -58,15 +61,24 @@ class PomodoroTimer {
     /** The default notification center. */
     var nc: NSUserNotificationCenter
     
+    var refreshTimer: Timer?
+    
     /**
-    Create a new Pomodoro instance.
+     Create a new Pomodoro instance.
+     
+     - parameters:
+        - view: The view to assign to this instance.
     */
-    init() {
+    init(view: PomodoroTimerView? = nil) {
         // Cache the default user notification center
         nc = NSUserNotificationCenter.default
         
         // Set defaults
         active = false
+        
+        if view != nil {
+            self.view = view
+        }
     }
     
     /**
@@ -92,7 +104,6 @@ class PomodoroTimer {
         
         // Start a session
         startSession(nextBreakIsLong: false)
-        debugPrint("Starting timer.")
     }
     
     /**
@@ -103,12 +114,7 @@ class PomodoroTimer {
             return
         }
         
-        active = false
-        
-        // Remove any scheduled notifications that may exist...
-        nc.removeScheduledNotification(state!.notification)
-        nc.removeAllDeliveredNotifications()
-        
+        cancelAction()
         debugPrint("Ending timer.")
     }
     
@@ -147,8 +153,12 @@ class PomodoroTimer {
     */
     func cancelAction() {
         active = false
-        state = nil
         history.removeAll()
+        cancelRefreshTimer()
+        view?.updateInactiveTimer()
+        // Remove any scheduled notifications that may exist...
+        nc.removeScheduledNotification(state!.notification)
+        state = nil
     }
     
     /**
@@ -185,6 +195,7 @@ class PomodoroTimer {
             type: .work
         )
         nc.scheduleNotification(state!.notification)
+        createRefreshTimer()
         debugPrint("Work session started and scheduled to end at:", state!.notification.deliveryDate!)
     }
     
@@ -221,8 +232,26 @@ class PomodoroTimer {
             type: seshType
         )
         nc.scheduleNotification(state!.notification)
+        createRefreshTimer()
         debugPrint("Break session started and scheduled to end at:", state!.notification.deliveryDate!)
         debugPrint(state!)
+    }
+    
+    /** Creates a refresh timer and adds it to the main loop. */
+    private func createRefreshTimer() {
+        refreshTimer = Timer(timeInterval: 1.0, repeats: true) {_ in
+            if self.state != nil {
+                self.view?.updateWithTimer(state: self.state!)
+            }
+        }
+        RunLoop.main.add(refreshTimer!, forMode: .commonModes)
+    }
+    
+    /** Cancels and requests the removal of a refresh timer from the main loop. */
+    func cancelRefreshTimer() {
+        if refreshTimer != nil {
+            refreshTimer!.invalidate()
+        }
     }
     
     /**

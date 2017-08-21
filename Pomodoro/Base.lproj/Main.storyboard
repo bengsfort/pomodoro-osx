@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -36,17 +38,23 @@
                 <customObject id="3FU-zB-z30" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="Pomodoro" customModuleProvider="target">
                     <connections>
                         <outlet property="statusMenu" destination="7ZF-qs-UBm" id="bbx-Xb-dND"/>
+                        <outlet property="timerMenuItem" destination="YJi-6P-JDQ" id="ABO-Z8-Oul"/>
+                        <outlet property="timerView" destination="xWQ-fi-RSv" id="i6F-I4-Fkf"/>
                         <outlet property="toggleMenuItem" destination="inJ-Yb-tve" id="UtO-Xt-BIR"/>
                     </connections>
                 </customObject>
                 <menu id="7ZF-qs-UBm">
                     <items>
+                        <menuItem title="timer_sate" id="YJi-6P-JDQ">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
                         <menuItem title="Start" id="inJ-Yb-tve">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="toggleClickedWithSender:" target="3FU-zB-z30" id="KlV-Dp-bfh"/>
                             </connections>
                         </menuItem>
+                        <menuItem isSeparatorItem="YES" id="IYD-rv-lUA"/>
                         <menuItem title="Quit" id="0aX-6g-ebl" userLabel="Quit">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -55,6 +63,44 @@
                         </menuItem>
                     </items>
                 </menu>
+                <customView misplaced="YES" id="xWQ-fi-RSv" customClass="PomodoroTimerView" customModule="Pomodoro" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="126" height="64"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="X5X-Zi-yvb" userLabel="Status">
+                            <rect key="frame" x="6" y="39" width="114" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Working..." placeholderString="Title" id="Rq0-5S-rQt">
+                                <font key="font" metaFont="systemUltraLight" size="13"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="pkz-aP-cUU" userLabel="Time Left">
+                            <rect key="frame" x="6" y="22" width="114" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="08:30 left" placeholderString="Time Left" id="sgp-aQ-Sea">
+                                <font key="font" metaFont="systemLight" size="13"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="HE6-0s-tvu">
+                            <rect key="frame" x="6" y="7" width="114" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Next: Short Break" id="XPZ-gd-09g">
+                                <font key="font" metaFont="systemSemibold" size="11"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <connections>
+                        <outlet property="nextSessionLabel" destination="HE6-0s-tvu" id="aKZ-lp-lHS"/>
+                        <outlet property="statusLabel" destination="X5X-Zi-yvb" id="hHg-n4-fgV"/>
+                        <outlet property="timeLeftLabel" destination="pkz-aP-cUU" id="LJw-9Y-mcS"/>
+                    </connections>
+                </customView>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
