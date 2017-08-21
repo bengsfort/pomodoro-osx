@@ -31,11 +31,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Pomodoro" customModuleProvider="target">
-                    <connections>
-                        <outlet property="quitMenuItem" destination="0aX-6g-ebl" id="Uos-x7-B9o"/>
-                    </connections>
-                </customObject>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Pomodoro" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="3FU-zB-z30" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="Pomodoro" customModuleProvider="target">
                     <connections>
@@ -44,6 +40,18 @@
                 </customObject>
                 <menu id="7ZF-qs-UBm">
                     <items>
+                        <menuItem title="Start" id="inJ-Yb-tve">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="startClickedWithSender:" target="3FU-zB-z30" id="PEv-tc-ZTk"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Cancel" id="oyA-KM-Hy2">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="cancelClickedWithSender:" target="3FU-zB-z30" id="1Ww-Y7-PpM"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="Quit" id="0aX-6g-ebl" userLabel="Quit">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
