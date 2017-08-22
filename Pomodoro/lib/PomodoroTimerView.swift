@@ -32,15 +32,26 @@ class PomodoroTimerView: NSView {
             statusLabel.cell?.title = "Short break"
             break
         }
-        
+        statusLabel.cell?.title = getTypeLabel(state.type)
         timeLeftLabel.cell?.title = getTimeRemaining(state)
+        nextSessionLabel.cell?.title = "Next: \(getTypeLabel(state.next))"
     }
     
-    func getTimeRemaining(_ state: PomodoroState) -> String {
-        let now = Date()
-        let cal = Calendar.current
-        let target = now.addingTimeInterval(state.sessionLength * 60.0)
-        let diff = cal.dateComponents([.minute, .second], from: now, to: target)
-        return "\(diff.minute!):\(diff.second!)"
+    private func getTimeRemaining(_ state: PomodoroState) -> String {
+        let diff = Calendar.current.dateComponents([.minute, .second],
+                                                   from: Date(),
+                                                   to: state.notification.deliveryDate!)
+        return "\(diff.minute!):\(diff.second!) left"
+    }
+    
+    private func getTypeLabel(_ type: PomodoroSessionType) -> String {
+        switch(type) {
+        case .work:
+            return "Working"
+        case .longBreak:
+            return "Long break"
+        case .shortBreak:
+            return "Short break"
+        }
     }
 }

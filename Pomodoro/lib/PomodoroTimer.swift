@@ -27,6 +27,8 @@ struct PomodoroState {
     var sessionLength: Double
     /** The type of session. */
     var type: PomodoroSessionType
+    /** The next sessions type. */
+    var next: PomodoroSessionType
 }
 
 /**
@@ -49,9 +51,6 @@ class PomodoroTimer {
     /** Is the timer active? */
     var active: Bool = false
     
-    /** The view for this timer. */
-    var view: PomodoroTimerView?
-    
     /** The current state of the Pomodoro timer. */
     var state: PomodoroState?
     
@@ -61,24 +60,18 @@ class PomodoroTimer {
     /** The default notification center. */
     var nc: NSUserNotificationCenter
     
-    var refreshTimer: Timer?
-    
     /**
      Create a new Pomodoro instance.
      
      - parameters:
         - view: The view to assign to this instance.
     */
-    init(view: PomodoroTimerView? = nil) {
+    init() {
         // Cache the default user notification center
         nc = NSUserNotificationCenter.default
         
         // Set defaults
         active = false
-        
-        if view != nil {
-            self.view = view
-        }
     }
     
     /**
@@ -91,7 +84,7 @@ class PomodoroTimer {
      Whether the session is a long break.
     */
     private func isLongBreak(_ sessionNum: Int) -> Bool {
-        return (sessionNum / 2) % sessionsUntilLongBreak == 0
+        return sessionNum % sessionsUntilLongBreak == 0
     }
     
     /**
@@ -154,11 +147,11 @@ class PomodoroTimer {
     func cancelAction() {
         active = false
         history.removeAll()
-        cancelRefreshTimer()
-        view?.updateInactiveTimer()
         // Remove any scheduled notifications that may exist...
-        nc.removeScheduledNotification(state!.notification)
-        state = nil
+        if state != nil {
+            nc.removeScheduledNotification(state!.notification)
+            state = nil
+        }
     }
     
     /**
@@ -173,13 +166,16 @@ class PomodoroTimer {
     func startSession(nextBreakIsLong: Bool = false) {
         var subtitle: String
         var content: String
+        var nextType: PomodoroSessionType
         
         if nextBreakIsLong {
             subtitle = "Awesome! Time for a lengthy break."
             content = "You've got \(longBreakLength) minutes to relax."
+            nextType = .longBreak
         } else {
             subtitle = "Nice job! Time for a quick break."
             content = "You've got \(shortBreakLength) minutes to relax."
+            nextType = .shortBreak
         }
         
         // Create new state
@@ -192,10 +188,10 @@ class PomodoroTimer {
                 actionLabel: "Start break"
             ),
             sessionLength: workSessionLength,
-            type: .work
+            type: .work,
+            next: nextType
         )
         nc.scheduleNotification(state!.notification)
-        createRefreshTimer()
         debugPrint("Work session started and scheduled to end at:", state!.notification.deliveryDate!)
     }
     
@@ -223,35 +219,18 @@ class PomodoroTimer {
         state = PomodoroState(
             notification: createNotification(
                 title: "Break over!",
-                subtitle: "Enjoy yourself? Time to get back to work!",
-                text: "Get ready for a \(workSessionLength) minute work session.",
+                subtitle: "Enjoy yourself? Time to work!",
+                text: "Get ready for \(workSessionLength) minutes of work.",
                 deliveryTime: seshLength * 60.0,
                 actionLabel: "Start work"
             ),
             sessionLength: seshLength,
-            type: seshType
+            type: seshType,
+            next: .work
         )
         nc.scheduleNotification(state!.notification)
-        createRefreshTimer()
         debugPrint("Break session started and scheduled to end at:", state!.notification.deliveryDate!)
         debugPrint(state!)
-    }
-    
-    /** Creates a refresh timer and adds it to the main loop. */
-    private func createRefreshTimer() {
-        refreshTimer = Timer(timeInterval: 1.0, repeats: true) {_ in
-            if self.state != nil {
-                self.view?.updateWithTimer(state: self.state!)
-            }
-        }
-        RunLoop.main.add(refreshTimer!, forMode: .commonModes)
-    }
-    
-    /** Cancels and requests the removal of a refresh timer from the main loop. */
-    func cancelRefreshTimer() {
-        if refreshTimer != nil {
-            refreshTimer!.invalidate()
-        }
     }
     
     /**

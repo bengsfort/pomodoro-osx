@@ -27,7 +27,8 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     /** The Pomodoro timer instance. */
     let pomodoro: PomodoroTimer = PomodoroTimer()
     
-    var loopTimer: Timer?
+    /** Main loop UI refresh timer */
+    var refreshTimer: Timer?
     
     /** Initialization. */
     override func awakeFromNib() {
@@ -54,6 +55,7 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
         if pomodoro.active {
             pomodoro.end()
         }
+        refreshTimer(cancel: true)
         debugPrint("Terminating.")
         NSApplication.shared().terminate(self)
     }
@@ -67,8 +69,10 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     @IBAction func toggleClicked(sender: NSMenuItem) {
         if !pomodoro.active {
             pomodoro.start()
+            refreshTimer()
         } else {
             pomodoro.end()
+            refreshTimer(cancel: true)
         }
         updateLabels()
     }
@@ -81,6 +85,14 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     }
     
     /**
+     Fires when a notification has been delivered.
+    */
+    func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {
+        // Invalidate the timer.
+        refreshTimer(cancel: true)
+    }
+    
+    /**
      Action handler for the action dispatched when a user clicks one of
      the notifications action buttons.
     */
@@ -88,6 +100,7 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
         switch notification.activationType {
         case .actionButtonClicked:
             pomodoro.continueAction()
+            refreshTimer()
             break
         default:
             pomodoro.cancelAction()
@@ -97,9 +110,28 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     }
     
     /**
+     Starts a timer for updating the menu item view time left label and adds it to the main loop.
+    */
+    func refreshTimer(cancel: Bool = false) {
+        // Invalidates the timer and requests its removal from the main run loop
+        if cancel {
+            refreshTimer?.invalidate()
+            return
+        }
+        // Creates the timer and adds it to the main run loop
+        refreshTimer = Timer(timeInterval: 1.0, repeats: true) { _ in
+            if self.pomodoro.state != nil {
+                debugPrint("Refresh timer tick.")
+                self.timerView.updateWithTimer(state: self.pomodoro.state!)
+            }
+        }
+        RunLoop.main.add(refreshTimer!, forMode: .commonModes)
+    }
+    
+    /**
      Updates the status menu labels to show the correct information.
     */
-    func updateLabels() {
+    func updateLabels() -> Void {
         if !pomodoro.active {
             toggleMenuItem.title = "Start"
             timerView.updateInactiveTimer()

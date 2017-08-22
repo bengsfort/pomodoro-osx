@@ -18,6 +18,7 @@ Temporary Items
 .apdisk
 build/
 DerivedData/
+Builds
 
 ## Various settings
 *.pbxuser
