@@ -46,6 +46,16 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     }
     
     /**
+     Action handler for the 'Preferences' menu item. Opens the preferences pane.
+     
+     - parameters:
+        - sender: The menu item that sent this action.
+    */
+    @IBAction func preferencesClicked(_ sender: NSMenuItem) {
+        
+    }
+    
+    /**
      Action handler for the 'Quit' menu item. Terminates the application.
      
      - parameters:

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C5F0CD21F4C4A27006649E5 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5F0CD01F4C4A27006649E5 /* PreferencesWindow.swift */; };
+		6C5F0CD31F4C4A27006649E5 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F0CD11F4C4A27006649E5 /* PreferencesWindow.xib */; };
 		6C905CF21F4AFA6C0027D917 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C905CF11F4AFA6C0027D917 /* AppDelegate.swift */; };
 		6C905CF61F4AFA6C0027D917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C905CF51F4AFA6C0027D917 /* Assets.xcassets */; };
 		6C905CF91F4AFA6C0027D917 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C905CF71F4AFA6C0027D917 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C5F0CD01F4C4A27006649E5 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesWindow.swift; path = lib/PreferencesWindow.swift; sourceTree = "<group>"; };
+		6C5F0CD11F4C4A27006649E5 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = lib/PreferencesWindow.xib; sourceTree = "<group>"; };
 		6C905CEE1F4AFA6C0027D917 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C905CF11F4AFA6C0027D917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C905CF51F4AFA6C0027D917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */,
 				6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */,
 				6CDF20D01F4B678600A7C1F1 /* PomodoroTimerView.swift */,
+				6C5F0CD01F4C4A27006649E5 /* PreferencesWindow.swift */,
+				6C5F0CD11F4C4A27006649E5 /* PreferencesWindow.xib */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C905CF61F4AFA6C0027D917 /* Assets.xcassets in Resources */,
+				6C5F0CD31F4C4A27006649E5 /* PreferencesWindow.xib in Resources */,
 				6C905CF91F4AFA6C0027D917 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +286,7 @@
 				6C905D2C1F4B0F6A0027D917 /* StatusMenuController.swift in Sources */,
 				6C905CF21F4AFA6C0027D917 /* AppDelegate.swift in Sources */,
 				6CDF20D11F4B678600A7C1F1 /* PomodoroTimerView.swift in Sources */,
+				6C5F0CD21F4C4A27006649E5 /* PreferencesWindow.swift in Sources */,
 				6CDF20CF1F4B4CE500A7C1F1 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
