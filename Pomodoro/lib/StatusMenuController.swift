@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
+class StatusMenuController: NSObject, NSUserNotificationCenterDelegate, PreferencesWindowDelegate {
     /** The status menu. */
     @IBOutlet weak var statusMenu: NSMenu!
     
@@ -27,6 +27,9 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
     /** The Pomodoro timer instance. */
     let pomodoro: PomodoroTimer = PomodoroTimer()
     
+    /** The preferences window. */
+    var preferencesWindow: PreferencesWindow!
+    
     /** Main loop UI refresh timer */
     var refreshTimer: Timer?
     
@@ -36,6 +39,11 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
         icon?.isTemplate = true
         statusItem.image = icon
         statusItem.menu = statusMenu
+        
+        // Set the preferences window
+        preferencesWindow = PreferencesWindow()
+        preferencesWindow.delegate = self
+        
         
         // Set the timer view
         timerMenuItem.view = timerView
@@ -52,7 +60,16 @@ class StatusMenuController: NSObject, NSUserNotificationCenterDelegate {
         - sender: The menu item that sent this action.
     */
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
-        
+        debugPrint("Opening preferences window.")
+        preferencesWindow.showWindow(nil)
+    }
+    
+    /**
+     Delegate action handler for updated preferences. Forces the Pomodoro instance
+     to refresh its timer configuration values.
+    */
+    func preferencesDidUpdate() {
+        pomodoro.updateTimerValues()
     }
     
     /**

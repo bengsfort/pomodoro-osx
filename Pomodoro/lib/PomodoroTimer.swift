@@ -8,28 +8,10 @@
 
 import Foundation
 
-/**
- Pomodoro session types.
- */
-enum PomodoroSessionType {
-    case work
-    case shortBreak
-    case longBreak
-}
-
-/**
- A state object representing a Pomodoro session.
- */
-struct PomodoroState {
-    /** The notification to be shown at the end of this session. */
-    var notification: NSUserNotification
-    /** The length of this session in minutes. */
-    var sessionLength: Double
-    /** The type of session. */
-    var type: PomodoroSessionType
-    /** The next sessions type. */
-    var next: PomodoroSessionType
-}
+let DEFAULT_WORK_SESSION: Double = 25.0
+let DEFAULT_SHORT_BREAK: Double = 5.0
+let DEFAULT_LONG_BREAK: Double = 15.0
+let DEFAULT_SESSIONS_UNTIL_LONG_BREAK: Int = 3
 
 /**
  A Pomodoro timer.
@@ -37,16 +19,16 @@ struct PomodoroState {
 class PomodoroTimer {
     
     /** How many sessions until a long break? */
-    let sessionsUntilLongBreak: Int = 3
+    var sessionsUntilLongBreak: Int = DEFAULT_SESSIONS_UNTIL_LONG_BREAK
     
     /** The length of work sessions, in minutes. */
-    let workSessionLength: Double = 25.0 // def. 25
+    var workSessionLength: Double = DEFAULT_WORK_SESSION
     
     /** The length of short breaks, in minutes. */
-    let shortBreakLength: Double = 5.0 // def. 5
+    var shortBreakLength: Double = DEFAULT_SHORT_BREAK
     
     /** The length of long breaks, in minutes. */
-    let longBreakLength: Double = 15.0 // def. 15
+    var longBreakLength: Double = DEFAULT_LONG_BREAK
     
     /** Is the timer active? */
     var active: Bool = false
@@ -70,8 +52,21 @@ class PomodoroTimer {
         // Cache the default user notification center
         nc = NSUserNotificationCenter.default
         
+        // Load the default timer configuration values from user storage
+        updateTimerValues()
+        
         // Set defaults
         active = false
+    }
+    
+    func updateTimerValues() {
+        let defaults = UserDefaults.standard
+        
+        // @todo make this into a struct so all of this manual getting/setting can be avoided
+        sessionsUntilLongBreak = defaults.integer(forKey: PomodoroStorageKeys.sessionsUntilLongBreak)
+        workSessionLength = defaults.double(forKey: PomodoroStorageKeys.workSessionLength)
+        shortBreakLength = defaults.double(forKey: PomodoroStorageKeys.shortBreakLength)
+        longBreakLength = defaults.double(forKey: PomodoroStorageKeys.longBreakLength)
     }
     
     /**

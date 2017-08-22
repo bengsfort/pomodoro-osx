@@ -12,7 +12,15 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Initialization
+        
+        // Register default preferences value on launch.
+        UserDefaults.standard.register(defaults: [
+            PomodoroStorageKeys.workSessionLength: DEFAULT_WORK_SESSION,
+            PomodoroStorageKeys.shortBreakLength: DEFAULT_SHORT_BREAK,
+            PomodoroStorageKeys.longBreakLength: DEFAULT_LONG_BREAK,
+            PomodoroStorageKeys.sessionsUntilLongBreak: DEFAULT_SESSIONS_UNTIL_LONG_BREAK
+        ])
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
