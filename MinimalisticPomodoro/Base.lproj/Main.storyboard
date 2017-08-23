@@ -33,9 +33,9 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Pomodoro" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="o9p0_ol_9hy" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="3FU-zB-z30" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="Pomodoro" customModuleProvider="target">
+                <customObject id="3FU-zB-z30" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="o9p0_ol_9hy" customModuleProvider="target">
                     <connections>
                         <outlet property="statusMenu" destination="7ZF-qs-UBm" id="bbx-Xb-dND"/>
                         <outlet property="timerMenuItem" destination="YJi-6P-JDQ" id="ABO-Z8-Oul"/>
@@ -70,7 +70,7 @@
                         </menuItem>
                     </items>
                 </menu>
-                <customView misplaced="YES" id="xWQ-fi-RSv" customClass="PomodoroTimerView" customModule="Pomodoro" customModuleProvider="target">
+                <customView misplaced="YES" id="xWQ-fi-RSv" customClass="PomodoroTimerView" customModule="o9p0_ol_9hy" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="126" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>

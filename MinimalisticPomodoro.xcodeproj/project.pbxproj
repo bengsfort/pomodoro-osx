@@ -39,11 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6C5F0CD01F4C4A27006649E5 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesWindow.swift; path = lib/PreferencesWindow.swift; sourceTree = "<group>"; };
-		6C5F0CD11F4C4A27006649E5 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencesWindow.xib; path = lib/PreferencesWindow.xib; sourceTree = "<group>"; };
-		6C5F0CD41F4C5A41006649E5 /* PomodoroUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PomodoroUtils.swift; path = lib/PomodoroUtils.swift; sourceTree = "<group>"; };
+		6C5F0CD01F4C4A27006649E5 /* PreferencesWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		6C5F0CD11F4C4A27006649E5 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		6C5F0CD41F4C5A41006649E5 /* PomodoroUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroUtils.swift; sourceTree = "<group>"; };
 		6C5F0CD61F4C65CD006649E5 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
-		6C905CEE1F4AFA6C0027D917 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C905CEE1F4AFA6C0027D917 /* Minimalistic Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minimalistic Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C905CF11F4AFA6C0027D917 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C905CF51F4AFA6C0027D917 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C905CF81F4AFA6C0027D917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,10 +54,10 @@
 		6C905D0A1F4AFA6C0027D917 /* PomodoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C905D0E1F4AFA6C0027D917 /* PomodoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroUITests.swift; sourceTree = "<group>"; };
 		6C905D101F4AFA6C0027D917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C905D2B1F4B0F6A0027D917 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusMenuController.swift; path = lib/StatusMenuController.swift; sourceTree = "<group>"; };
-		6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PomodoroTimer.swift; path = lib/PomodoroTimer.swift; sourceTree = "<group>"; };
-		6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = lib/Utils.swift; sourceTree = "<group>"; };
-		6CDF20D01F4B678600A7C1F1 /* PomodoroTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PomodoroTimerView.swift; path = lib/PomodoroTimerView.swift; sourceTree = "<group>"; };
+		6C905D2B1F4B0F6A0027D917 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		6C905D2E1F4B14450027D917 /* PomodoroTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroTimer.swift; sourceTree = "<group>"; };
+		6CDF20CE1F4B4CE500A7C1F1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6CDF20D01F4B678600A7C1F1 /* PomodoroTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		6C905CE51F4AFA6C0027D917 = {
 			isa = PBXGroup;
 			children = (
-				6C905CF01F4AFA6C0027D917 /* Pomodoro */,
+				6C905CF01F4AFA6C0027D917 /* MinimalisticPomodoro */,
 				6C905D021F4AFA6C0027D917 /* PomodoroTests */,
 				6C905D0D1F4AFA6C0027D917 /* PomodoroUITests */,
 				6C905CEF1F4AFA6C0027D917 /* Products */,
@@ -98,14 +98,14 @@
 		6C905CEF1F4AFA6C0027D917 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C905CEE1F4AFA6C0027D917 /* Pomodoro.app */,
+				6C905CEE1F4AFA6C0027D917 /* Minimalistic Pomodoro.app */,
 				6C905CFF1F4AFA6C0027D917 /* PomodoroTests.xctest */,
 				6C905D0A1F4AFA6C0027D917 /* PomodoroUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6C905CF01F4AFA6C0027D917 /* Pomodoro */ = {
+		6C905CF01F4AFA6C0027D917 /* MinimalisticPomodoro */ = {
 			isa = PBXGroup;
 			children = (
 				6C5F0CD61F4C65CD006649E5 /* Pomodoro.entitlements */,
@@ -115,7 +115,7 @@
 				6C905CFA1F4AFA6C0027D917 /* Info.plist */,
 				6C905D2D1F4B0F780027D917 /* Lib */,
 			);
-			path = Pomodoro;
+			path = MinimalisticPomodoro;
 			sourceTree = "<group>";
 		};
 		6C905D021F4AFA6C0027D917 /* PomodoroTests */ = {
@@ -148,14 +148,15 @@
 				6C5F0CD41F4C5A41006649E5 /* PomodoroUtils.swift */,
 			);
 			name = Lib;
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6C905CED1F4AFA6C0027D917 /* Pomodoro */ = {
+		6C905CED1F4AFA6C0027D917 /* Minimalistic Pomodoro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6C905D131F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "Pomodoro" */;
+			buildConfigurationList = 6C905D131F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "Minimalistic Pomodoro" */;
 			buildPhases = (
 				6C905CEA1F4AFA6C0027D917 /* Sources */,
 				6C905CEB1F4AFA6C0027D917 /* Frameworks */,
@@ -165,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = Pomodoro;
+			name = "Minimalistic Pomodoro";
 			productName = Pomodoro;
-			productReference = 6C905CEE1F4AFA6C0027D917 /* Pomodoro.app */;
+			productReference = 6C905CEE1F4AFA6C0027D917 /* Minimalistic Pomodoro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6C905CFE1F4AFA6C0027D917 /* PomodoroTests */ = {
@@ -240,7 +241,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6C905CE91F4AFA6C0027D917 /* Build configuration list for PBXProject "Pomodoro" */;
+			buildConfigurationList = 6C905CE91F4AFA6C0027D917 /* Build configuration list for PBXProject "MinimalisticPomodoro" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -253,7 +254,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6C905CED1F4AFA6C0027D917 /* Pomodoro */,
+				6C905CED1F4AFA6C0027D917 /* Minimalistic Pomodoro */,
 				6C905CFE1F4AFA6C0027D917 /* PomodoroTests */,
 				6C905D091F4AFA6C0027D917 /* PomodoroUITests */,
 			);
@@ -323,12 +324,12 @@
 /* Begin PBXTargetDependency section */
 		6C905D011F4AFA6C0027D917 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6C905CED1F4AFA6C0027D917 /* Pomodoro */;
+			target = 6C905CED1F4AFA6C0027D917 /* Minimalistic Pomodoro */;
 			targetProxy = 6C905D001F4AFA6C0027D917 /* PBXContainerItemProxy */;
 		};
 		6C905D0C1F4AFA6C0027D917 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6C905CED1F4AFA6C0027D917 /* Pomodoro */;
+			target = 6C905CED1F4AFA6C0027D917 /* Minimalistic Pomodoro */;
 			targetProxy = 6C905D0B1F4AFA6C0027D917 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,11 +442,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MinimalisticPomodoro/Pomodoro.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 33P23AQN3Y;
-				INFOPLIST_FILE = Pomodoro/Info.plist;
+				INFOPLIST_FILE = MinimalisticPomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bengsfort.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,11 +459,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MinimalisticPomodoro/Pomodoro.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 33P23AQN3Y;
-				INFOPLIST_FILE = Pomodoro/Info.plist;
+				INFOPLIST_FILE = MinimalisticPomodoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = Bengsfort.Pomodoro;
@@ -537,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6C905CE91F4AFA6C0027D917 /* Build configuration list for PBXProject "Pomodoro" */ = {
+		6C905CE91F4AFA6C0027D917 /* Build configuration list for PBXProject "MinimalisticPomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C905D111F4AFA6C0027D917 /* Debug */,
@@ -546,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6C905D131F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "Pomodoro" */ = {
+		6C905D131F4AFA6C0027D917 /* Build configuration list for PBXNativeTarget "Minimalistic Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6C905D141F4AFA6C0027D917 /* Debug */,
