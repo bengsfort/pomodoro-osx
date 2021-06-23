@@ -1,4 +1,4 @@
-# pomodoro-osx
+# Minimalistic Pomodoro for OSX
 
 This project is a minimalistic Pomodoro timer for OS X written in Swift started by @bengsfort, and 
 substantially enhanced by myself.
