@@ -7,7 +7,7 @@
 //
 
 import XCTest
-//@testable import Minimalistic_Pomodoro
+@testable import Minimalistic_Pomodoro
 
 class PomodoroTests: XCTestCase {
     
