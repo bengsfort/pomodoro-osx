@@ -37,7 +37,7 @@ class IntegerField: NSTextField, NSTextFieldDelegate {
      - parameters:
         - obj: The notification containing the field that has changed.
     */
-    override func controlTextDidChange(_ obj: Notification) {
+    func controlTextDidChange(_ obj: Notification) {
         if self == obj.object as? NSTextField {
             // Create a character set of all characters apart from numbers
             let charSet: CharacterSet = CharacterSet(charactersIn: "0123456789").inverted
@@ -51,7 +51,7 @@ class IntegerField: NSTextField, NSTextFieldDelegate {
      - parameters:
         - obj: The notification containing the field that has finished editing.
     */
-    override func controlTextDidEndEditing(_ obj: Notification) {
+    func controlTextDidEndEditing(_ obj: Notification) {
         if self == obj.object as? NSTextField {
             // Clamp the value to the min and max values.
             self.doubleValue = self.doubleValue.clamp(minimum: minValue, maximum: maxValue)

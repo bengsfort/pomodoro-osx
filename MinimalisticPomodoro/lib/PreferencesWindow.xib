@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindow" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
             <connections>
                 <outlet property="longBreakLengthField" destination="Op2-Eh-8Ct" id="ffG-Wm-dR5"/>
-                <outlet property="sessionsUntilLongBreakField" destination="68Q-W8-lBs" id="D9h-e5-7T4"/>
+                <outlet property="playSoundOnCompleteButton" destination="KHa-jp-VaT" id="H6a-Ox-gQh"/>
+                <outlet property="pomodoroLengthField" destination="GCK-pr-kFf" id="Nem-ey-igu"/>
+                <outlet property="pomodorosPerSetField" destination="68Q-W8-lBs" id="Ddn-2Y-z8t"/>
                 <outlet property="shortBreakLengthField" destination="Y4m-8c-qYa" id="rV4-US-u8C"/>
+                <outlet property="showTimerInStatusBarButton" destination="BoI-36-6gG" id="VFc-uC-JWv"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
-                <outlet property="workSessionLengthField" destination="GCK-pr-kFf" id="JTt-83-H5z"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Pomodoro Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Timer Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="399" height="201"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="contentRect" x="196" y="240" width="399" height="238"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="399" height="201"/>
+                <rect key="frame" x="0.0" y="0.0" width="399" height="238"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6d-Xw-ogB">
-                        <rect key="frame" x="8" y="148" width="183" height="18"/>
+                        <rect key="frame" x="77" y="190" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Work session length" id="wQR-mI-zHO">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pomodoro length" id="wQR-mI-zHO">
                             <font key="font" metaFont="systemLight" size="14"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfZ-xj-BfX">
-                        <rect key="frame" x="8" y="123" width="183" height="18"/>
+                        <rect key="frame" x="67" y="165" width="123" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Short break length" id="xN0-Zc-ouc">
                             <font key="font" metaFont="systemLight" size="14"/>
@@ -46,7 +47,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PnB-uH-JKJ">
-                        <rect key="frame" x="8" y="98" width="183" height="18"/>
+                        <rect key="frame" x="71" y="140" width="120" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Long break length" id="QyL-Vd-8Zx">
                             <font key="font" metaFont="systemLight" size="14"/>
@@ -55,7 +56,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0a-EL-ij0">
-                        <rect key="frame" x="262" y="148" width="114" height="18"/>
+                        <rect key="frame" x="262" y="190" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="minutes (15 - 90)" id="ThX-fZ-O9z">
                             <font key="font" metaFont="systemLight" size="14"/>
@@ -64,7 +65,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifm-zc-yNH">
-                        <rect key="frame" x="262" y="123" width="105" height="18"/>
+                        <rect key="frame" x="262" y="165" width="105" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="minutes (5 - 15)" id="oPF-PA-Clp">
                             <font key="font" metaFont="systemLight" size="14"/>
@@ -73,7 +74,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xOL-vS-grv">
-                        <rect key="frame" x="262" y="98" width="108" height="18"/>
+                        <rect key="frame" x="262" y="140" width="108" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="minutes (5 - 30)" id="WfN-MZ-zRd">
                             <font key="font" metaFont="systemLight" size="14"/>
@@ -82,16 +83,93 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHA-KX-f4G">
-                        <rect key="frame" x="8" y="73" width="183" height="18"/>
+                        <rect key="frame" x="121" y="115" width="70" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Sessions until long break" id="tAk-UJ-jS7">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Set length" id="tAk-UJ-jS7">
                             <font key="font" metaFont="systemLight" size="14"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                         </textFieldCell>
                     </textField>
+                    <textField toolTip="How long should work sessions be? (minimum 15 - maximum 90 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-pr-kFf" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
+                        <rect key="frame" x="208" y="188" width="46" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="25" bezelStyle="round" id="Xcs-A3-HLR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <action selector="selectNextKeyView:" target="F0z-JX-Cv5" id="XrN-EU-vc6"/>
+                            <outlet property="nextKeyView" destination="Y4m-8c-qYa" id="RVx-XB-9Sf"/>
+                        </connections>
+                    </textField>
+                    <textField toolTip="How long should short breaks be? (minimum 5, maximum 15 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4m-8c-qYa" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
+                        <rect key="frame" x="208" y="163" width="46" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="5" bezelStyle="round" id="pQG-wC-STN">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="nextKeyView" destination="Op2-Eh-8Ct" id="sCK-rb-gVA"/>
+                        </connections>
+                    </textField>
+                    <textField toolTip="How long should long breaks be? (minimum 5, maximum 30 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-Eh-8Ct" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
+                        <rect key="frame" x="208" y="138" width="46" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="15" bezelStyle="round" id="8L9-jR-vLs">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="nextKeyView" destination="68Q-W8-lBs" id="Agv-oB-5wJ"/>
+                        </connections>
+                    </textField>
+                    <textField toolTip="How many pomodoros before a long break? (minimum 1, maximum 5)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68Q-W8-lBs" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
+                        <rect key="frame" x="208" y="113" width="46" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="3" bezelStyle="round" id="82v-bz-U05">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="nextKeyView" destination="KHa-jp-VaT" id="cvw-nV-rgG"/>
+                        </connections>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-Q9-APC">
+                        <rect key="frame" x="262" y="117" width="111" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="pomodors (1 - 5)" id="VRG-rY-djr">
+                            <font key="font" metaFont="systemLight" size="14"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHa-jp-VaT">
+                        <rect key="frame" x="115" y="84" width="182" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Play sound on completion" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="g5d-7d-GdB">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <outlet property="nextKeyView" destination="cax-Yr-HHC" id="GwC-lZ-C98"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BoI-36-6gG">
+                        <rect key="frame" x="115" y="60" width="173" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Show timer in status bar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="BTK-cC-Xn0">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cax-Yr-HHC">
-                        <rect key="frame" x="120" y="13" width="75" height="32"/>
+                        <rect key="frame" x="121" y="13" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7tH-3B-Isg">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -103,7 +181,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAg-af-ydS">
-                        <rect key="frame" x="202" y="13" width="75" height="32"/>
+                        <rect key="frame" x="203" y="13" width="75" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="weu-vY-siO">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -113,70 +191,12 @@
                             <action selector="resetClicked:" target="-2" id="YNp-gu-UiC"/>
                         </connections>
                     </button>
-                    <textField toolTip="How long should work sessions be? (minimum 15 - maximum 90 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GCK-pr-kFf" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
-                        <rect key="frame" x="208" y="146" width="46" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" toolTip="How long should work sessions be? (minimum 15, maximum 90 minutes)" placeholderString="25" bezelStyle="round" id="Xcs-A3-HLR">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <action selector="selectNextKeyView:" target="F0z-JX-Cv5" id="XrN-EU-vc6"/>
-                            <outlet property="nextKeyView" destination="Y4m-8c-qYa" id="RVx-XB-9Sf"/>
-                        </connections>
-                    </textField>
-                    <textField toolTip="How long should short breaks be? (minimum 5, maximum 15 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4m-8c-qYa" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
-                        <rect key="frame" x="208" y="121" width="46" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="5" bezelStyle="round" id="pQG-wC-STN">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="nextKeyView" destination="Op2-Eh-8Ct" id="sCK-rb-gVA"/>
-                        </connections>
-                    </textField>
-                    <textField toolTip="How long should long breaks be? (minimum 5, maximum 30 minutes)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Op2-Eh-8Ct" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
-                        <rect key="frame" x="208" y="96" width="46" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="15" bezelStyle="round" id="8L9-jR-vLs">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="nextKeyView" destination="68Q-W8-lBs" id="Agv-oB-5wJ"/>
-                        </connections>
-                    </textField>
-                    <textField toolTip="How many sessions before a long break? (minimum 1, maximum 5)" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="68Q-W8-lBs" customClass="IntegerField" customModule="Minimalistic_Pomodoro" customModuleProvider="target">
-                        <rect key="frame" x="208" y="71" width="46" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="3" bezelStyle="round" id="82v-bz-U05">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="nextKeyView" destination="cax-Yr-HHC" id="HuV-Gu-wXH"/>
-                        </connections>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ema-Q9-APC">
-                        <rect key="frame" x="262" y="75" width="101" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="sessions (1 - 5)" id="VRG-rY-djr">
-                            <font key="font" metaFont="systemLight" size="14"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="104.5" y="127.5"/>
+            <point key="canvasLocation" x="104.5" y="146"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="hM9-zk-tNu"/>
     </objects>

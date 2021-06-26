@@ -12,46 +12,36 @@ class PomodoroTimerView: NSView {
     
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var timeLeftLabel: NSTextField!
-    @IBOutlet weak var nextSessionLabel: NSTextField!
+    @IBOutlet weak var nextLabel: NSTextField!
     
     func updateInactiveTimer() {
-        statusLabel.cell?.title = "Not running"
-        timeLeftLabel.cell?.title = ""
-        nextSessionLabel.cell?.title = ""
+        statusLabel.cell?.title = " "
+        timeLeftLabel.cell?.title = "Not Running"
+        nextLabel.cell?.title = " "
     }
     
     func updateWithTimer(state: PomodoroState) {
-        switch(state.type) {
-        case .work:
-            statusLabel.cell?.title = "Working"
-            break
-        case .longBreak:
-            statusLabel.cell?.title = "Long break"
-            break
-        case .shortBreak:
-            statusLabel.cell?.title = "Short break"
-            break
+        timeLeftLabel.cell?.title = "\(state.getTimeRemaining()) Left"
+        if (state.type == .work)
+        {
+            statusLabel.cell?.title = "\(getTypeLabel(state.type)) \(state.count) of \(state.end)"
+            nextLabel.cell?.title = "Next: \(getTypeLabel(state.next))"
         }
-        statusLabel.cell?.title = getTypeLabel(state.type)
-        timeLeftLabel.cell?.title = getTimeRemaining(state)
-        nextSessionLabel.cell?.title = "Next: \(getTypeLabel(state.next))"
+        else
+        {
+            statusLabel.cell?.title = getTypeLabel(state.type)
+            nextLabel.cell?.title = "Next: \(getTypeLabel(state.next)) \(state.count)"
+        }
     }
     
-    private func getTimeRemaining(_ state: PomodoroState) -> String {
-        let diff = Calendar.current.dateComponents([.minute, .second],
-                                                   from: Date(),
-                                                   to: state.notification.deliveryDate!)
-        return "\(diff.minute!):\(diff.second!) left"
-    }
-    
-    private func getTypeLabel(_ type: PomodoroSessionType) -> String {
+    private func getTypeLabel(_ type: PomodoroPhaseType) -> String {
         switch(type) {
         case .work:
-            return "Working"
-        case .longBreak:
-            return "Long break"
+            return "Pomodoro"
         case .shortBreak:
-            return "Short break"
+                return "Short Break"
+        case .longBreak:
+            return "Long Break"
         }
     }
 }

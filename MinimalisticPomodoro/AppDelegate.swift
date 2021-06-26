@@ -15,10 +15,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Register default preferences value on launch.
         UserDefaults.standard.register(defaults: [
-            PomodoroStorageKeys.workSessionLength: DEFAULT_WORK_SESSION,
-            PomodoroStorageKeys.shortBreakLength: DEFAULT_SHORT_BREAK,
-            PomodoroStorageKeys.longBreakLength: DEFAULT_LONG_BREAK,
-            PomodoroStorageKeys.sessionsUntilLongBreak: DEFAULT_SESSIONS_UNTIL_LONG_BREAK
+            PomodoroStorageKeys.pomodoroLength: DEFAULT_PROMODORO_LENGTH,
+            PomodoroStorageKeys.shortBreakLength: DEFAULT_SHORT_BREAK_LENGTH,
+            PomodoroStorageKeys.longBreakLength: DEFAULT_LONG_BREAK_LENGTH,
+            PomodoroStorageKeys.pomodorosPerSet: DEFAULT_POMODOROS_PER_SET,
+            PomodoroStorageKeys.playSoundOnComplete: DEFAULT_PLAY_SOUND
         ])
         
     }
